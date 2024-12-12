@@ -12,7 +12,7 @@
 
 NAME = pipex
 SOURCES = \
-	
+	pipex.c utils.c
 OBJECTS = $(SOURCES:.c=.o)
 
 CC = cc

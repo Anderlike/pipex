@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.h                                            :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaleixo- <aaleixo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/19 17:44:47 by aaleixo-          #+#    #+#             */
-/*   Updated: 2024/11/19 17:44:47 by aaleixo-         ###   ########.fr       */
+/*   Created: 2024/12/12 16:14:37 by aaleixo-          #+#    #+#             */
+/*   Updated: 2024/12/12 16:14:37 by aaleixo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PIPEX_H
-#define PIPEX_H
+#include "libft.h"
 
-#include "./ft_printf/ft_printf.h"
-#include <sys/wait.h>
-#include <string.h>
-#include <fcntl.h>
+int	ft_strcmp(char *s1, char *s2)
+{
+	size_t	i;
 
-void ft_free(char **target);
-char *get_env(char *cmd, char **env);
-char *get_path(char *cmd, char **env);
-int open_file(char *file, int read);
-
-
-#endif
+	i = 0;
+	if (!s1)
+		return (1);
+	while (s1[i] || s2[i])
+	{
+		if (s1[i] != s2[i])
+			return (s1[i] - s2[i]);
+		i++;
+	}
+	return (0);
+}

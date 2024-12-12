@@ -21,7 +21,7 @@ void execution(char* cmd, char **env)
     path = get_path(cmds[0], env);
     if(execve(path, cmds, env) == -1)
     {
-        ft_putstr_fd("pipex: command not found: ", 2);
+        ft_putstr_fd("pipex command not found: ", 2);
         ft_putendl_fd(cmds[0], 2);
         ft_free(cmds);
         exit(0);
